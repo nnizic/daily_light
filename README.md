@@ -36,5 +36,5 @@ FastAPI web servis koji dohvaća **Evanđelje dana** s [HILP.hr](https://hilp.hr
 
 1. Clone repozitorij:
 ```bash
-git clone https://github.com/username/liturgija-api.git
-cd liturgija-api
+git clone https://github.com/<username>/daily_light.git
+cd daily_light
