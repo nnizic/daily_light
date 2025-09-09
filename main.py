@@ -11,7 +11,7 @@ DAY_MAP = {
     "monday": "ponedjeljak",
     "tuesday": "utorak",
     "wednesday": "srijeda",
-    "thursday": "četvrtak",
+    "thursday": "cetvrtak",
     "friday": "petak",
     "saturday": "subota",
     "sunday": "nedjelja",
