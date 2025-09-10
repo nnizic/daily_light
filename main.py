@@ -34,7 +34,14 @@ async def fetch_gospel_by_date(date_str: str):
     url = f"{BASE_URL}{formatted}/"
 
     async with httpx.AsyncClient() as client:
-        resp = await client.get(url)
+        resp = await client.get(
+            url,
+            headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) " "AppleWebKit/537.36 (KHTML, like Gecko) " "Chrome/115.0 Safari/537.36",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            },
+            timeout=20.0,
+        )
         if resp.status_code != 200:
             raise HTTPException(status_code=404, detail=f"Stranica za taj datum nije pronađena.\n Status: {resp.status_code}")
         soup = BeautifulSoup(resp.text, "html.parser")
