@@ -36,9 +36,7 @@ async def fetch_gospel_by_date(date_str: str):
     async with httpx.AsyncClient() as client:
         resp = await client.get(url)
         if resp.status_code != 200:
-            raise HTTPException(
-                status_code=404, detail="Stranica za taj datum nije pronađena"
-            )
+            raise HTTPException(status_code=404, detail=f"Stranica za taj datum nije pronađena.\n Status: {resp.status_code}")
         soup = BeautifulSoup(resp.text, "html.parser")
 
     blurbs = soup.find_all("div", class_="et_pb_blurb_content")
